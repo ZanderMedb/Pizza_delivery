@@ -1,0 +1,55 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+
+actor Cliente
+actor Administrador
+
+package "Sistema de Pedidos de Pizza" {
+    
+    rectangle "Autenticação" {
+        (Cadastrar-se) as UC1
+        (Fazer Login) as UC2
+        UC1 --> UC2 : <<include>>
+    }
+
+    rectangle "Catálogo e Carrinho" {
+        (Visualizar Pizzas) as UC3
+        (Adicionar ao Carrinho) as UC4
+        (Visualizar Carrinho) as UC5
+    }
+
+    rectangle "Finalização de Pedido" {
+        (Confirmar Pedido) as UC6
+        (Selecionar Pagamento) as UC7
+        UC6 --> UC7 : <<include>>
+    }
+
+    rectangle "Acompanhamento" {
+        (Acompanhar Pedido) as UC8
+        (Cancelar Pedido) as UC9
+    }
+
+    rectangle "Administração" {
+        (Gerenciar Produtos) as UC10
+        (Atualizar Estoque) as UC11
+        (Gerenciar Pedidos) as UC12
+    }
+    
+    Cliente --> UC1
+    Cliente --> UC2
+    Cliente --> UC3
+    Cliente --> UC4
+    Cliente --> UC5
+    Cliente --> UC6
+    Cliente --> UC7
+    Cliente --> UC8
+    Cliente --> UC9
+
+    Administrador --> UC10
+    Administrador --> UC11
+    Administrador --> UC12
+}
+
+@enduml

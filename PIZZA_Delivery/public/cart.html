@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Pizzaria</title>
+    <link href="https://fonts.googleapis.com/css?family=Hepta+Slab:400,700|Lato:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/cart.css">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <a href="index.html">Voltar</a>
+        </div>
+    </header>
+
+    <div class="cart-container">
+        <h1>Seu Carrinho</h1>
+        <div id="cart-items"></div>
+
+        <div class="cart-summary">
+            <div class="subtotal">
+                <span>Subtotal:</span>
+                <span id="subtotal">R$ 0,00</span>
+            </div>
+            <div class="delivery">
+                <span>Taxa de entrega:</span>
+                <span id="delivery">R$ 5,00</span>
+            </div>
+            <div class="total">
+                <strong>Total:</strong>
+                <strong id="total">R$ 0,00</strong>
+            </div>
+        </div>
+
+        <div class="delivery-info">
+            <h3>Endereço de Entrega</h3>
+            <div id="user-info" class="user-info">
+                <!-- Informações do usuário serão inseridas aqui via JavaScript -->
+            </div>
+        </div>
+
+        <button class="checkout-btn" id="checkout">Finalizar Pedido</button>
+    </div>
+
+    <div class="empty-cart" style="display: none;">
+        <h2>Seu carrinho está vazio</h2>
+        <p>Volte para a página inicial e escolha suas pizzas favoritas!</p>
+        <a href="index.html" class="back-btn">Voltar para o Cardápio</a>
+    </div>
+
+    <script src="../dados/pizzaData.js"></script>
+    <script src="../dados/dbManager.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="../script/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreando sua Entrega</title>
+    <link rel="stylesheet" href="../style/entrega.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div class="pizza-logo">
+            <img src="../images/pizzalogo.png" alt="Logo da Pizzaria" class="logo-entrega">
+            <h2>Rastreando sua Entrega</h2>
+        </div>
+
+        <div id="resultado">
+            <div class="status-header">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#e23744">
+                    <path d="M12 22s8.5-9.5 8.5-13.5S16.42 2 12 2 3.5 4.5 3.5 8.5 12 22 12 22z"/>
+                </svg>
+                <h3>Status da Entrega</h3>
+            </div>
+            
+            <div id="statusSteps">
+                <div class="step" id="preparo">
+                    <div class="step-content">
+                        <div class="step-circle"></div>
+                        <span>Preparando (15 min)</span>
+                    </div>
+                </div>
+                <div class="step" id="caminho">
+                    <div class="step-content">
+                        <div class="step-circle"></div>
+                        <span>A caminho</span>
+                    </div>
+                </div>
+                <div class="step" id="entregue">
+                    <div class="step-content">
+                        <div class="step-circle"></div>
+                        <span>Entregue</span>
+                    </div>
+                </div>
+            </div>
+
+            <p id="statusAtual"></p>
+            <p id="tempoEstimado"></p>
+            <p id="tempoRestante"></p>
+            <div id="progressBar">
+                <div id="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <small>&copy; 2024 Rastreador de Entrega. Todos os direitos reservados.</small>
+    </footer>
+
+    <script src="../script/entrega.js"></script>
+</body>
+</html>

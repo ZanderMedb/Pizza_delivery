@@ -1,0 +1,43 @@
+@startuml Diagrama_de_Casos_de_Uso_Pizzaria_Delivery
+left to right direction
+skinparam monochrome true
+skinparam usecase {
+  BackgroundColor #F9F9F9
+  BorderColor #333
+  ActorBorderColor #000
+}
+
+actor Cliente as "Cliente"
+
+usecase "Autenticar-se (login/cadastro)" as Autenticar
+usecase "Fazer Pedido" as FazerPedido
+usecase "Selecionar Pizza" as SelecionarPizza
+usecase "Adicionar no carrinho" as AdicionarCarrinho
+usecase "Visualizar Carrinho" as VisualizarCarrinho
+usecase "Confirmar Pedido" as ConfirmarPedido
+usecase "Selecionar Pagamento" as SelecionarPagamento
+usecase "Escolher Endereço" as EscolherEndereco
+usecase "Recabar Confirmação" as RecabarConfirmacao
+usecase "Status do pedido" as StatusPedido
+usecase "Pedido Entregue" as PedidoEntregue
+usecase "Cancelar Pedido" as CancelarPedido
+usecase "Feedback do Cliente" as FeedbackCliente
+
+Cliente --> Autenticar
+Cliente --> FazerPedido
+Cliente --> VisualizarCarrinho
+Cliente --> ConfirmarPedido
+Cliente --> StatusPedido
+
+FazerPedido --> SelecionarPizza
+FazerPedido --> AdicionarCarrinho
+
+ConfirmarPedido --> SelecionarPagamento
+ConfirmarPedido --> EscolherEndereco
+ConfirmarPedido --> RecabarConfirmacao
+
+StatusPedido --> PedidoEntregue
+StatusPedido --> CancelarPedido
+
+PedidoEntregue --> FeedbackCliente
+@enduml

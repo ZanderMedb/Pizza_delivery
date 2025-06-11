@@ -1,0 +1,23 @@
+@startuml
+!define RECTANGLE class
+
+skinparam rectangle {
+  BackgroundColor #F9F9F9
+  BorderColor #333
+}
+
+start
+:Cliente acessa o site/app;
+:Faz login ou cadastro;
+:Navega pelas opções de pizza;
+:Seleciona e personaliza a pizza;
+:Adiciona a pizza ao carrinho;
+:Revisa itens do carrinho;
+:Seleciona pagamento e endereço;
+:Finaliza e confirma o pedido;
+:Acompanha o status do pedido;
+:Recebe a pizza e notificação;
+:Avalia o pedido;
+stop
+
+@enduml

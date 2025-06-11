@@ -1,0 +1,33 @@
+%%{init: {'theme': 'neutral', 'fontFamily': 'Arial', 'gantt': {'barHeight': 20}}}%%
+graph TD
+    %% Definindo o ator Cliente
+    Cliente([Cliente])
+    
+    %% Casos de uso PRINCIPAIS (conectados diretamente ao Cliente)
+    Cliente --> Autenticar["Autenticar-se (login/cadastro)"]
+    Cliente --> FazerPedido["Fazer Pedido"]
+    Cliente --> VisualizarCarrinho["Visualizar Carrinho"]
+    Cliente --> ConfirmarPedido["Confirmar Pedido"]
+    Cliente --> StatusPedido["Status do pedido"]
+    
+    %% SUBCASOS de "Fazer Pedido"
+    FazerPedido --> SelecionarPizza["Selecionar Pizza"]
+    FazerPedido --> AdicionarCarrinho["Adicionar no carrinho"]
+    
+    %% SUBCASOS de "Confirmar Pedido"
+    ConfirmarPedido --> SelecionarPagamento["Selecionar Pagamento"]
+    ConfirmarPedido --> EscolherEndereco["Escolher Endereço"]
+    ConfirmarPedido --> RecabarConfirmacao["Recabar Confirmação"]
+    
+    %% SUBCASOS de "Status do pedido"
+    StatusPedido --> PedidoEntregue["Pedido Entregue"]
+    StatusPedido --> CancelarPedido["Cancelar Pedido"]
+    
+    %% Extensão de "Pedido Entregue"
+    PedidoEntregue --> FeedbackCliente["Feedback do Cliente"]
+    
+    %% ESTILIZAÇÃO para ficar IDÊNTICO ao PDF
+    classDef actor fill:#fff,stroke:#000,stroke-width:2px,shape:circle;
+    classDef useCase fill:#f9f9f9,stroke:#333,stroke-width:1px,shape:ellipse;
+    class Cliente actor;
+    class Autenticar,FazerPedido,VisualizarCarrinho,ConfirmarPedido,StatusPedido,SelecionarPizza,AdicionarCarrinho,SelecionarPagamento,EscolherEndereco,RecabarConfirmacao,PedidoEntregue,CancelarPedido,FeedbackCliente useCase;

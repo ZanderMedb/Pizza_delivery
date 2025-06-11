@@ -1,0 +1,92 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+' Classes principais
+class Usuario {
+  - id: int
+  - nome: string
+  - email: string
+  - senha: string
+  + autenticar(): bool
+}
+
+class Cliente {
+  - telefone: string
+  + realizarPedido(): Pedido
+  + cancelarPedido(): bool
+}
+
+class Administrador {
+  + gerenciarPizzas(): void
+  + gerarRelatorios(): void
+}
+
+Usuario <|-- Cliente
+Usuario <|-- Administrador
+
+class Endereco {
+  - rua: string
+  - numero: int
+  - bairro: string
+  - cidade: string
+  - estado: string
+  - cep: string
+  + validar(): bool
+}
+
+Cliente "1" -- "1..*" Endereco : possui >
+
+class Pizza {
+  - id: int
+  - nome: string
+  - descricao: string
+  - precoPequena: double
+  - precoMedia: double
+  - precoGrande: double
+  - estoque: int
+  + verificarDisponibilidade(): bool
+}
+
+class Carrinho {
+  - id: int
+  + adicionarItem(pizza: Pizza, quantidade: int): void
+  + removerItem(pizza: Pizza): void
+  + calcularTotal(): double
+}
+
+Cliente "1" -- "1" Carrinho : possui >
+
+class Pedido {
+  - id: int
+  - dataHora: datetime
+  - valorTotal: double
+  + confirmar(): bool
+  + calcularTempoEntrega(): int
+}
+
+Pedido "1" -- "1..*" ItemPedido : contém >
+
+class ItemPedido {
+  - quantidade: int
+  - tamanho: string
+  + calcularSubtotal(): double
+}
+
+ItemPedido "*" -- "1" Pizza : refere-se >
+
+class Pagamento {
+  - metodo: string
+  - status: string
+  + validarPagamento(): bool
+}
+
+Pedido "1" -- "1" Pagamento : inclui >
+
+class StatusPedido {
+  - statusAtual: string
+  + atualizarStatus(novoStatus: string): void
+}
+
+Pedido "1" -- "1" StatusPedido : possui >
+
+@enduml

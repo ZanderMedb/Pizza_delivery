@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>Pizza Delivery - Dados para Entrega</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Hepta+Slab:400,700|Lato:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-header">
+            <div class="pizza-logo">
+                <img src="../images/pizzalogo.png" alt="Logo da Pizzaria">
+            </div>
+            <h1>Dados para Entrega</h1>
+            <p>Preencha suas informações para receber seu pedido</p>
+        </div>
+
+        <form id="registerForm" autocomplete="off">
+            <div class="input-group">
+                <label for="name">Nome completo</label>
+                <input type="text" id="name" required autocomplete="name">
+            </div>
+            <div class="input-group">
+                <label for="phone">Telefone</label>
+                <input type="tel" id="phone" placeholder="(99) 99999-9999" required autocomplete="tel">
+            </div>
+            <div class="input-group">
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" placeholder="99999-999" required autocomplete="postal-code">
+            </div>
+            <div class="input-group">
+                <label for="address">Endereço</label>
+                <input type="text" id="address" required autocomplete="street-address">
+            </div>
+            <div class="input-group">
+                <label for="number">Número</label>
+                <input type="text" id="number" required autocomplete="address-line2">
+            </div>
+            <div class="input-group">
+                <label for="complement">Complemento (opcional)</label>
+                <input type="text" id="complement" autocomplete="address-line3">
+            </div>
+            <div class="input-group">
+                <label for="neighborhood">Bairro</label>
+                <input type="text" id="neighborhood" required autocomplete="address-level2">
+            </div>
+            <div class="input-group">
+                <label for="paymentMethod">Forma de Pagamento</label>
+                <select id="paymentMethod" required>
+                    <option value="" disabled selected>Selecione...</option>
+                    <option value="pix">PIX</option>
+                    <option value="credit">Crédito</option>
+                    <option value="debit">Débito</option>
+                    <option value="cash">Dinheiro</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-btn">
+                <span>Confirmar Pedido</span>
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14m-7-7l7 7-7 7"/>
+                </svg>
+            </button>
+        </form>
+    </div>
+
+    <div class="copyright">© 2024 Pizza Delivery</div>
+
+    <script src="../dados/pizzaData.js"></script>
+    <script src="../dados/dbManager.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="../script/register.js"></script>
+</body>
+</html>
