@@ -214,3 +214,8 @@ if (window.anime) {
         easing: 'easeOutElastic(1, .5)'
     });
 }
+
+// Exporte as funções para teste (caso use Node ou module system)
+if (typeof module !== "undefined") {
+    module.exports = { calcularTotais, adicionarAoCarrinho };
+}

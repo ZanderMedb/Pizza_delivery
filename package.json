@@ -1,0 +1,34 @@
+{
+  "name": "pizza-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZanderMedb/Pizza_delivery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZanderMedb/Pizza_delivery/issues"
+  },
+  "homepage": "https://github.com/ZanderMedb/Pizza_delivery#readme",
+  "description": "",
+  "devDependencies": {
+    "jest": "^30.0.0",
+    "jest-environment-jsdom": "^30.0.0",
+    "jest-localstorage-mock": "^2.4.26"
+  },
+  "jest": {
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ],
+    "testEnvironment":"jsdom"
+  }
+}
